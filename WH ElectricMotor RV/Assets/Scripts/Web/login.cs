@@ -9,7 +9,7 @@ public class login : MonoBehaviour
     public InputField UsernameInput;
     public InputField PasswordInput;
     public Button LoginButton;
-    // public Button RegisterButton;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,9 @@ public class login : MonoBehaviour
         {
             StartCoroutine(MainWeb.Instance.WebRequest.Login(UsernameInput.text, PasswordInput.text));
         });
-        /*
-        RegisterButton.onClick.AddListener(() =>
-        {
-            StartCoroutine(MainWeb.Instance.WebRequest.RegisterUser(UsernameInput.text, PasswordInput.text));
-        });
-        */
+        
+        
+        
     }
 
     

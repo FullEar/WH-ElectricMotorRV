@@ -8,64 +8,10 @@ public class WebRequest : MonoBehaviour
 {
     void Start()
     {
-        // A correct website page.
-        //StartCoroutine(GetDate("http://25.55.69.115/UnityBackEndTutorial/GetDate.PHP"));
-        //StartCoroutine(GetUsers("http://25.55.69.115/UnityBackEndTutorial/Getuser.PHP"));
-        //StartCoroutine(Login("testuse2", "123456"));
-        //StartCoroutine(RegisterUser("otraprueba", "123456"));
+        
 
     }
-
-    IEnumerator GetDate(string uri)
-    {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
-        {
-            // Request and wait for the desired page.
-            yield return webRequest.SendWebRequest();
-
-            string[] pages = uri.Split('/');
-            int page = pages.Length - 1;
-
-            switch (webRequest.result)
-            {
-                case UnityWebRequest.Result.ConnectionError:
-                case UnityWebRequest.Result.DataProcessingError:
-                    Debug.LogError(pages[page] + ": Error: " + webRequest.error);
-                    break;
-                case UnityWebRequest.Result.ProtocolError:
-                    Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
-                    break;
-                case UnityWebRequest.Result.Success:
-                    Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
-                    break;
-            }
-        }
-    }
-    IEnumerator GetUsers(string uri)
-    {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
-        {
-            // Request and wait for the desired page.
-            yield return webRequest.SendWebRequest();
-
-            string[] pages = uri.Split('/');
-            int page = pages.Length - 1;
-
-            switch (webRequest.result)
-            {
-                case UnityWebRequest.Result.ConnectionError:
-                case UnityWebRequest.Result.DataProcessingError:
-                    Debug.LogError(pages[page] + ": Error: " + webRequest.error);
-                    break;
-                case UnityWebRequest.Result.ProtocolError:
-                    Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
-                    break;
-                case UnityWebRequest.Result.Success:
-                    Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
-                    break;
-            }
-        }
-    }
+    
     
     public IEnumerator Login(string username, string password)
     {
@@ -75,7 +21,7 @@ public class WebRequest : MonoBehaviour
         //este metodo es super chaco para verificar el usuario y continuar xd
         string checkuser;
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/UnityBackEndTutorial/Login.PHP", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/WormholeRV/Login.PHP", form))
         {
             yield return www.SendWebRequest();
             
@@ -99,13 +45,23 @@ public class WebRequest : MonoBehaviour
         }
         
     }
-    public IEnumerator RegisterUser(string username, string password)
+    public IEnumerator RegisterUser(string username, string password, string LEmail, string LDay, string LMonth, string LYear, string LName, string LaName, int LSex)
     {
         WWWForm form = new WWWForm();
         form.AddField("loginUser", username);
         form.AddField("loginPass", password);
+        form.AddField("loginMail", LEmail);
+        form.AddField("loginName", LName);
+        form.AddField("loginLame", LaName);
+        form.AddField("loginYear", LYear);
+        form.AddField("loginMonth", LMonth);
+        form.AddField("loginDay", LDay);
+        form.AddField("loginSex", LSex);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/UnityBackEndTutorial/RegisterUser.PHP", form))
+
+
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/WormholeRV/RegisterUser.PHP", form))
         {
             yield return www.SendWebRequest();
 

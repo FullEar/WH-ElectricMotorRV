@@ -15,6 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/EmptyTest.unity
     guid: 9a35be5c61421604695e405a09a33983
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/MainScene.unity
     guid: d980fa7ee7321ed4aa9d548c91a3ec32
   m_configObjects:
@@ -24,3 +25,8 @@ EditorBuildSettings:
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 319e7d7fab5f5da459300a8f1736dcde,
       type: 2}
+=======
+    path: Assets/Scenes/RegisterScene.unity
+    guid: 5a29a559d70ed394eb1d0ce255e91aa9
+  m_configObjects: {}
+>>>>>>> main

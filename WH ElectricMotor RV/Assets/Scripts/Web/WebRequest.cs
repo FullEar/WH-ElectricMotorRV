@@ -6,18 +6,54 @@ using UnityEngine.SceneManagement;
 
 public class WebRequest : MonoBehaviour
 {
+
+    public GameObject LogginPanel;
+    public GameObject GameMenu;
+    public GameObject RegisterPanel;
+    public GameObject Mainpanel;
+    
+
     void Start()
     {
-        
+        LogginPanel.SetActive(true);
+        GameMenu.SetActive(false);
+        RegisterPanel.SetActive(false);
 
     }
-    
-    
+    //ocultar todo
+    public void Panelchange1()
+    {
+        Mainpanel.SetActive(false);
+        
+    }
+    //Cambio a paner Registro
+    public void Panelchange2()
+    {
+        LogginPanel.SetActive(false);
+        GameMenu.SetActive(false);
+        RegisterPanel.SetActive(true);
+    }
+    //Cambio a paner Loggin
+    public void Panelchange3()
+    {
+        LogginPanel.SetActive(true);
+        GameMenu.SetActive(false);
+        RegisterPanel.SetActive(false);
+    }
+    //Cambio a panel Game menu sin login
+    public void Panelchange4()
+    {
+        LogginPanel.SetActive(false);
+        GameMenu.SetActive(true);
+        RegisterPanel.SetActive(false);
+    }
+
     public IEnumerator Login(string username, string password)
     {
         WWWForm form = new WWWForm();
         form.AddField("loginUser", username);
         form.AddField("loginPass", password);
+        
         //este metodo es super chaco para verificar el usuario y continuar xd
         string checkuser;
 
@@ -28,6 +64,7 @@ public class WebRequest : MonoBehaviour
             if (www.result != UnityWebRequest.Result.Success)
             {
                 Debug.Log(www.error);
+                
             }
             else
             {
@@ -37,7 +74,8 @@ public class WebRequest : MonoBehaviour
 
                 if (checkuser == "Login Succes")
                 {
-                    SceneManager.LoadScene("EmptyTest");
+                    LogginPanel.SetActive(false);
+                    GameMenu.SetActive(true);
                 }
 
 
@@ -45,7 +83,7 @@ public class WebRequest : MonoBehaviour
         }
         
     }
-    public IEnumerator RegisterUser(string username, string password, string LEmail, string LDay, string LMonth, string LYear, string LName, string LaName, int LSex)
+    public IEnumerator RegisterUser(string username, string password, string LEmail, string LDay, string LMonth, string LYear, string LName, string LaName, string LSex)
     {
         WWWForm form = new WWWForm();
         form.AddField("loginUser", username);

@@ -14,7 +14,7 @@ public class Register : MonoBehaviour
     public InputField YearInput;
     public InputField NameInput;
     public InputField LastnameInput;
-    public Dropdown Sexinput;
+    public InputField Sexinput;
     
 
     public Button RegisterBB;
@@ -26,7 +26,7 @@ public class Register : MonoBehaviour
         
         RegisterBB.onClick.AddListener(() =>
         {
-            StartCoroutine(MainWeb.Instance.WebRequest.RegisterUser(UsernameInput.text, PasswordInput.text, EmailInput.text, DayInput.text, MonthInput.text, YearInput.text, NameInput.text, LastnameInput.text, Sexinput.value));
+            StartCoroutine(MainWeb.Instance.WebRequest.RegisterUser(UsernameInput.text, PasswordInput.text, EmailInput.text, DayInput.text, MonthInput.text, YearInput.text, NameInput.text, LastnameInput.text, Sexinput.text));
     });
         
     }

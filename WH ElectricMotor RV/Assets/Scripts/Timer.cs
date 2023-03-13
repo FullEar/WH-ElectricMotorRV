@@ -13,10 +13,14 @@ public class Timer : MonoBehaviour
     public GameObject ConBoxButton;
     public GameObject VentiladorButton;
     public GameObject BobinasButton;
-    public GameObject BalerosButton;
-    public GameObject RetBalerosButton;
+    //public GameObject BalerosButton;
+    //public GameObject RetBalerosButton;
     public GameObject FlechaButton;
     public GameObject CarcasaButton;
+    //public GameObject MotorButton;
+    //public GameObject NucleoEstatorButton;
+    public GameObject NucleoRotorButton;
+    //public GameObject TapaVentiladorButton;
 
     public void Disappear()
     {
@@ -28,10 +32,14 @@ public class Timer : MonoBehaviour
         ConBoxButton.SetActive(false);
         VentiladorButton.SetActive(false);
         BobinasButton.SetActive(false);
-        BalerosButton.SetActive(false);
-        RetBalerosButton.SetActive(false);
+        //BalerosButton.SetActive(false);
+        //RetBalerosButton.SetActive(false);
         FlechaButton.SetActive(false);
         CarcasaButton.SetActive(false);
+        //MotorButton.SetActive(false);
+        //NucleoEstatorButton.SetActive(false);
+        NucleoRotorButton.SetActive(false);
+        //  TapaVentiladorButton.SetActive(false);
         StartCoroutine(ButtonCoroutine());
     }
 
@@ -47,11 +55,15 @@ public class Timer : MonoBehaviour
         ConBoxButton.SetActive(true);
         VentiladorButton.SetActive(true);
         BobinasButton.SetActive(true);
-        BalerosButton.SetActive(true);
-        RetBalerosButton.SetActive(true);
+        //BalerosButton.SetActive(true);
+        //RetBalerosButton.SetActive(true);
         FlechaButton.SetActive(true);
         CarcasaButton.SetActive(true);
+        //MotorButton.SetActive(true);
+        //NucleoEstatorButton.SetActive(true);
+        NucleoRotorButton.SetActive(true);
+        //TapaVentiladorButton.SetActive(true);
     }
 
-    
+
 }

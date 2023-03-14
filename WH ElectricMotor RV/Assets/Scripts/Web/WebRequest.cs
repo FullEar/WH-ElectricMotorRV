@@ -51,13 +51,24 @@ public class WebRequest : MonoBehaviour
     public IEnumerator Login(string username, string password)
     {
         WWWForm form = new WWWForm();
+        if (username == "")
+        {
+            username = "Wrong";
+            password = "Credential";
+        }
+        if (password == "")
+        {
+            username = "Wrong";
+            password = "Credential";
+        }
+        
         form.AddField("loginUser", username);
         form.AddField("loginPass", password);
         
         //este metodo es super chaco para verificar el usuario y continuar xd
         string checkuser;
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.1.90/WormholeRV/Login.PHP", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/WormholeRV/Login.PHP", form))
         {
             yield return www.SendWebRequest();
             
@@ -90,16 +101,17 @@ public class WebRequest : MonoBehaviour
         form.AddField("loginPass", password);
         form.AddField("loginMail", LEmail);
         form.AddField("loginName", LName);
-        form.AddField("loginLame", LaName);
+        form.AddField("loginLame", LaName); 
         form.AddField("loginYear", LYear);
         form.AddField("loginMonth", LMonth);
         form.AddField("loginDay", LDay);
         form.AddField("loginSex", LSex);
+        
 
 
 
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.1.90/WormholeRV/RegisterUser.PHP", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/WormholeRV/RegisterUser.PHP", form))
         {
             yield return www.SendWebRequest();
 

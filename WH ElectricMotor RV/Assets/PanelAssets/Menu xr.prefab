@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 9045200688452795576, guid: ac898fa637e33184faebbb5523b3c59d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9045200688452795576, guid: ac898fa637e33184faebbb5523b3c59d,
         type: 3}
@@ -128,10 +128,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9045200688452795578, guid: ac898fa637e33184faebbb5523b3c59d,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9045200688452795581, guid: ac898fa637e33184faebbb5523b3c59d,
         type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: Menu xr
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

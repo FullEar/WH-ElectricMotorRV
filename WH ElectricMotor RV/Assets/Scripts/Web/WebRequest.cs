@@ -68,7 +68,7 @@ public class WebRequest : MonoBehaviour
         //este metodo es super chaco para verificar el usuario y continuar xd
         string checkuser;
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/WormholeRV/Login.PHP", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.1.90/WormholeRV/Login.PHP", form))
         {
             yield return www.SendWebRequest();
             
@@ -111,7 +111,7 @@ public class WebRequest : MonoBehaviour
 
 
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/WormholeRV/RegisterUser.PHP", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://192.168.1.90/WormholeRV/RegisterUser.PHP", form))
         {
             yield return www.SendWebRequest();
 
